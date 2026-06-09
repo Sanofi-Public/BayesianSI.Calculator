@@ -527,7 +527,7 @@ For bug reports, feature requests, and other questions:
 
 ---
 
-**Additional Resources:**
+**Coming Soon:**
 
-- [Internal_BSI Shiny App](https://r-connect-dev.prod.p488440267176.aws-emea.sanofi.com/content/b1cdbb08-12fe-4136-a108-6456cb19c957/)
-- [Technical Documentation](https://r-connect-dev.prod.p488440267176.aws-emea.sanofi.com/content/44966b86-ac33-4d42-9db9-4e4f69a03835/Notebook3_DocumentationBSIApp_Version_0.2.html)
+- [Internal_BSI Shiny App]
+- [Technical Documentation]
