@@ -523,7 +523,7 @@ This package is licensed under the [MIT License](LICENSE.md). Copyright © 2025 
 
 For bug reports, feature requests, and other questions:
 - GitHub Issues: https://github.com/Sanofi-Public/BayesianSI.Calculator/issues
-- Maintainer: Ekin Ören (Ekin.Oeren@sanofi.com)
+- Maintainer: Sebastian Schmitz (sebastian.schmitz@sanofi.com)
 
 ---
 
