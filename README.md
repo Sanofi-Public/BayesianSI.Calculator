@@ -1,4 +1,4 @@
-# BayesianStatisticalIntervalsCalculator (BSI)
+# BayesianStatisticalIntervalsCalculator  (BSI)
 
 ## Overview
 
