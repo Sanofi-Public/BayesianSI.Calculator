@@ -10,3 +10,4 @@
 ^\.Rcheck$
 ^.*\.Rcheck$
 ^.*\.tar\.gz$
+^inst/shiny/manifest\.json$
