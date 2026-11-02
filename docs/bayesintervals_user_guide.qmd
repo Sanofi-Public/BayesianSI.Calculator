@@ -34,6 +34,7 @@ The package and its interactive application have different names:
 |---|---|---|
 | R package | `bayesintervals` | `library(bayesintervals)` |
 | Shiny application | **BSI** (*Bayesian Statistical Intervals*) | `start_app_view()` |
+| Hosted application | BSI, online (no installation) | <https://019faf9d-81d8-fbce-bf57-f54100b8fe6a.share.connect.posit.cloud/> |
 | GitHub repository | `BayesianSI.Calculator` | <https://github.com/Sanofi-Public/BayesianSI.Calculator> |
 
 : Names {.striped}

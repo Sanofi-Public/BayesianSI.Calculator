@@ -6,6 +6,8 @@
 
 **User guide:** <https://sanofi-public.github.io/BayesianSI.Calculator/> (step-by-step guide to the package and the BSI application, with worked examples on synthetic data).
 
+**Try the application online:** <https://019faf9d-81d8-fbce-bf57-f54100b8fe6a.share.connect.posit.cloud/> (the BSI Shiny application, hosted on Posit Connect Cloud; no installation needed. Uploaded files are processed on the hosting server, so do not upload confidential data. For those, install the package and run `start_app_view()` locally).
+
 <img width="1833" height="779" alt="image" src="https://github.com/user-attachments/assets/94d58c42-2273-48ce-bf78-0587246ecce3" />
 
 
