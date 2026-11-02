@@ -40,6 +40,25 @@ test_that("gamma_achieved reports the share of draws inside the interval, not 10
   expect_equal(unname(opt$gamma_achieved), 80, tolerance = 0.01)
 })
 
+test_that("the Krishnamoorthy line stays within the padded data range at any data scale", {
+  set.seed(11)
+  for (centre in c(0, 5, 1500)) {
+    mcmc <- data.frame(g = "A", b = rnorm(300, centre, 20), s2 = rgamma(300, 20, 0.01))
+    pd <- calculate_predicted_distributions(mcmc, "b", "s2", "g", tolerance_level = 90)
+    gp <- calculate_gP_mean(pd, 90)
+    opt <- find_optimal_point(pd, gp, gamma_actual = 80)[["A"]]
+    pk <- plotly::plotly_build(plot_krishnamoorthy(pd, "A", opt, 90, 80))
+    ln <- Filter(function(tr) identical(tr$name, "Krishnamoorthy Line"), pk$x$data)[[1]]
+    xr <- range(pd$upper_quantile); yr <- range(pd$lower_quantile)
+    lx <- as.numeric(ln$x); ly <- as.numeric(ln$y)
+    expect_gte(min(lx), xr[1] - 0.1 * diff(xr) - 1e-8)
+    expect_lte(max(lx), xr[2] + 0.1 * diff(xr) + 1e-8)
+    expect_gte(min(ly), yr[1] - 0.1 * diff(yr) - 1e-8)
+    expect_lte(max(ly), yr[2] + 0.1 * diff(yr) + 1e-8)
+    expect_equal(lx + ly, rep(unname(opt$g1 + opt$g2), length(lx)), tolerance = 1e-8)  # still the line g1 + g2 = const
+  }
+})
+
 axis_title <- function(ax) if (is.list(ax$title)) ax$title$text else ax$title
 
 test_that("plots have the upper quantile on the x-axis and the lower quantile on the y-axis", {

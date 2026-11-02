@@ -42,6 +42,22 @@ First CRAN release.
 
 ## Bug fixes
 
+* Two-sided Krishnamoorthy tolerance intervals (`use_krishnamoorthy = TRUE`):
+  `calculate_gamma_difference()` now counts the draws whose own interval lies
+  inside the candidate interval [g1, g2] (`lower_quantile >= g1` and
+  `upper_quantile <= g2`), as in Krishnamoorthy and Mathew (2009). The
+  comparison used to point the other way, which gave intervals that were too
+  narrow.
+* `find_optimal_point()` returned `gamma_achieved` as 100 minus the gap to the
+  target, which is wrong for any target other than 100. It now reports the
+  achieved percentage.
+* `plot_krishnamoorthy()` and `quantile_scatterplot()` show the upper quantile
+  on the x-axis and the lower quantile on the y-axis, so that the shaded
+  region of draws inside the interval is the upper-left rectangle and the
+  optimal point is at its lower-right corner. The orange line in
+  `plot_krishnamoorthy()` now spans only the range of the draws, so the axes
+  stay tight to the points at any scale of the data.
+* The same changes were made in the Shiny application.
 * `quantile_scatterplot()` now draws confidence ellipses when called from
   the package. The helper that computes them previously existed only inside
   the Shiny application, so the ellipses were silently skipped.

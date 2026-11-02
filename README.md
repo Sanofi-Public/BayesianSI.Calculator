@@ -4,6 +4,8 @@
 
 **bayesintervals** is an R package for the rapid calculation and visualization of Bayesian statistical intervals from MCMC output data. It provides both R functions for programmatic access and a Shiny application for interactive analysis. Note that the package and the application have different names: the package is called `bayesintervals`, the application is called **BSI** (Bayesian Statistical Intervals) and is started with `start_app_view()`. The GitHub repository is named `BayesianSI.Calculator`.
 
+**User guide:** <https://sanofi-public.github.io/BayesianSI.Calculator/> (step-by-step guide to the package and the BSI application, with worked examples on synthetic data).
+
 <img width="1833" height="779" alt="image" src="https://github.com/user-attachments/assets/94d58c42-2273-48ce-bf78-0587246ecce3" />
 
 

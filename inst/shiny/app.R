@@ -4022,7 +4022,14 @@ server <- function(input, output, session) {
         x_range <- range(data_subset$upper_quantile)
         y_range <- range(data_subset$lower_quantile)
 
-        x_line_log <- seq(min(x_range[1], g2_log), max(x_range[2], g2_log * 1.5), length.out = 100)
+        # The line spans the padded data range only, so the axes stay tight to the point cloud
+        # whatever the scale of the data
+        x_line_pad <- (x_range[2] - x_range[1]) * 0.1
+        y_line_pad <- (y_range[2] - y_range[1]) * 0.1
+        x_line_log <- seq(x_range[1] - x_line_pad, x_range[2] + x_line_pad, length.out = 400)
+        y_line_log <- 2 * gP_mean_log - x_line_log
+        in_box <- y_line_log >= y_range[1] - y_line_pad & y_line_log <= y_range[2] + y_line_pad
+        if (any(in_box)) x_line_log <- x_line_log[in_box]
 
         if(is_log_normal) {
           # For log-normal case: y_new = exp(a*log(x_new)+b) where a=-1 and b=2*gP_mean

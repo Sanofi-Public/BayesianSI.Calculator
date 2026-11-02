@@ -46,4 +46,13 @@ The note comes from the "CRAN incoming feasibility" check:
   application runs and restored afterwards.
 * The package contains one small synthetic data set (`data_InputFileTester2`,
   19 rows) for examples and tests. It contains no real data.
+* The `URL` field lists the user guide (GitHub Pages, built from the `docs`
+  folder of the repository) and the development repository. The guide uses
+  simulated data only.
+* The two-sided tolerance interval (Krishnamoorthy and Mathew, 2009) was
+  corrected relative to the earlier GitHub versions: draws are counted when
+  their own interval lies inside the candidate interval, the reported
+  achieved credibility is the real achieved percentage, and the two-sided
+  plots show the upper quantile on the x-axis and the lower on the y-axis.
+  The tests cover this; see `NEWS.md`.
 * There are no reverse dependencies (new package).
