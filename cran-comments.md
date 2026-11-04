@@ -10,18 +10,18 @@ version number continues the numbering of the public GitHub releases.
 The note comes from the "CRAN incoming feasibility" check:
 
 * This is a new submission.
-* The DESCRIPTION cites Krishnamoorthy and Mathew (2009),
+* "Krishnamoorthy" is flagged as possibly misspelled. It is the surname of
+  the author of the cited reference, Krishnamoorthy and Mathew (2009),
   <doi:10.1002/9780470473900>. The DOI resolves (doi.org and Crossref), but
   the publisher's website (Wiley) answers automated requests with HTTP 403,
-  so the URL check may report it as "Forbidden".
-* If the spell check flags words in the DESCRIPTION, they are the author
-  names "Krishnamoorthy" and "Mathew" and the acronym "MCMC" (Markov chain
-  Monte Carlo, spelled out in the text).
+  so the URL check may report it as "Forbidden" on some systems.
 
 ## Test environments
 
 * local: Windows 11 x64, R 4.2.3 (`R CMD check --as-cran`: 0 errors,
   0 warnings; notes only for the new submission and the local environment)
+* win-builder: R Under development (unstable) (2026-11-02 r90827 ucrt),
+  Windows Server 2022 (1 note: new submission, see above)
 * GitHub Actions (`R-CMD-check` workflow from r-lib/actions, all `Status: OK`):
   * ubuntu-latest: R-devel (2026-10-21 r90732), R 4.6.1 (release),
     R 4.5.3 (oldrel-1)
